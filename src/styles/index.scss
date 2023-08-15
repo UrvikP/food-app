@@ -1,0 +1,59 @@
+:root{
+    --background-color: #fff;
+    --background-light: #fff;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --primary-color: rgb(255, 0, 86);
+    --text-color: #0A0A0A;
+    --text-light: #575757;
+    --font-size: 16px;
+    --animation-speed: 1;
+}
+
+//Sass function
+
+@function getAnimationDuration($duration: number){
+    @return calc($duration * var(--animation-speed));
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: var(--font-size);
+    font-family: 'Roboto', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+@import "partials/navbar";
+
+.section{
+    display: flex;
+    align-items: center;
+    .col{
+        width: 50%;
+    }
+}
+
+.main{
+    padding-block: 3vw;
+}
+.container{
+    padding-inline: 15vw;
+}
+
+@import "partials/animations";
+@media screen and (max-width: 768px){
+    .navbar{
+        .nav-links{
+            display: none;
+        }
+        .sidebar-btn{
+            display: block;
+        }
+    } 
+}
