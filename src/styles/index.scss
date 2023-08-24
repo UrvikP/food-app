@@ -71,13 +71,15 @@ img{
 .section{
     display: flex;
     align-items: center;
+    margin-bottom: 3vw;
     .col{
         width: 50%;
     }
     .title{
         color: var(--text-color);
-        font-size: 3em;
+        font-size: 2.5em;
         margin-bottom: .25em;
+        font-weight: 900;
     }
     .info{
         color: var(--text-light);
@@ -88,53 +90,15 @@ img{
     }
 }
 
-.section.hero{
-    .typography{
-        padding-right: 1em;
-    }
-    .gallery{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2vw;
-        .custom-image{
-            border-radius: 5px;
-            overflow: hidden;
-            transform: scale(0);
-            opacity: 0;
-            animation: getAnimationDuration(.3s) popOut forwards;
-            &:nth-child(2){
-                animation-delay: .1s;
-            }
-            &:nth-child(3){
-                animation-delay: .2s;
-            }
-            &:nth-child(4){
-                animation-delay: .3s;
-            }
-            &:nth-child(5){
-                animation-delay: .4s;
-            }
-            &:nth-child(6){
-                animation-delay: .5s;
-            }
-            &:nth-child(7){
-                animation-delay: .6s;
-            }
-            &:nth-child(8){
-                animation-delay: .7s;
-            }
-            &:nth-child(9){
-                animation-delay: .8s;
-            }
-        }
-    }
-}
+@import "partials/hero-section";
+
+@import "partials/improve-skills";
 
 .main{
     padding-block: 3vw;
 }
 .container{
-    padding-inline: 15vw;
+    padding-inline: 12vw;
 }
 
 @import "partials/animations";
