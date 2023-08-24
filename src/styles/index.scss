@@ -101,7 +101,10 @@ img{
     padding-inline: 12vw;
 }
 
+@import "partials/quote-section";
+
 @import "partials/animations";
+
 @media screen and (max-width: 768px){
     .navbar{
         .nav-links{
