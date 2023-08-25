@@ -108,7 +108,7 @@ img{
 .top-chefs-container{
     display: grid;
     grid-template-columns: repeat(autofit, minmax(280px, 1fr));
-    grid-gap: 1.56em;
+    grid-gap: 1.5em;
 }
 
 .chef-card{
