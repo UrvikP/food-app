@@ -3,6 +3,7 @@ import { useState } from "react"
 import Sidebar from "./Sidebar"
 import {faHome, faList, faCog} from "@fortawesome/free-solid-svg-icons"
 
+
 export default function Navbar(){
     const [showSidebar, setShowSidebar] = useState(false);
     const location = useLocation();
