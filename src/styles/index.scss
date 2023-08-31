@@ -113,15 +113,22 @@ img{
     padding-inline: 25vw;
 }
 
+@media screen and (max-width: 4080px){
+    .container{
+        padding-inline: 3vw;
+    }
+    
+}
+
 @media screen and (max-width: 1280px){
     .container{
-        padding-inline: 18vw;
+        padding-inline: 3vw;
     }
 }
 
 @media screen and (max-width: 1050px){
     .container{
-        padding-inline: 12vw;
+        padding-inline: 3vw;
     }
 }
 
