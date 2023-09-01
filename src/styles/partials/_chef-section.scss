@@ -12,7 +12,7 @@
 .chef-card{
     display: flex;
     height: 120px;
-    background-color: var(--background-color);
+    background-color: var(--background-light);
     border-radius: 5px;
     overflow: hidden;
     img{
@@ -29,6 +29,7 @@
         justify-content: space-between;
         padding-bottom: .5em;
         padding-left: 1em;
+        padding-top: .5em;
     }
     .chef-card-name{
         font-size: 1.5em;

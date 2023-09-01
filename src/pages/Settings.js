@@ -3,7 +3,9 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 import { useState, useEffect } from "react";
 
+
 export default function Settings(){
+    
     const [settings, setSettings] = useState({
         "--background-color": "#fff",
         "--background-light": "#fff",
@@ -45,9 +47,33 @@ export default function Settings(){
         setTheme(i === 0 ? "light" : "dark")
         //update the settings
         let _settings = {...settings}
-        for(let key in _settings){
+        for(let key in _theme){
             _settings[key] = _theme[key]
         }
+        setSettings(_settings)
+    }
+
+    function changeColor(i){
+        const _color = primaryColors[i]
+        let _settings = {...settings}
+        _settings["--primary-color"] = _color
+        setPrimaryColor(i)
+        setSettings(_settings)
+    }
+
+    function changeFontSize(i){
+        const _size = fontSizes[i]
+        let _settings = {...settings}
+        _settings["--font-size"] = _size.value
+        setFontSize(i)
+        setSettings(_settings)
+    }
+
+    function changeAnimationSpeed(i){
+        const _speed = animationSpeeds[i]
+        let _settings = {...settings}
+        _settings["--animation-speed"] = _speed.value
+        setAnimationSpeed(i)
         setSettings(_settings)
     }
 
@@ -93,7 +119,7 @@ export default function Settings(){
     return (
         <div>
             <div className="section d-block">
-                <h2>Preferred Theme</h2>
+                <h2>Theme</h2>
                 <div className="options-container">
                     <div className="option light" onClick={() => changeTheme(0)}>
                         { theme === "light" && (
@@ -113,10 +139,10 @@ export default function Settings(){
             </div>
 
             <div className="section d-block">
-                <h2>Primary Color</h2>
+                <h2>Color</h2>
                 <div className="options-container">
                     { primaryColors.map( (color, index) => (
-                        <div className="option light" style={ {backgroundColor: color} }>
+                        <div className="option light" style={ {backgroundColor: color} } onClick={() => changeColor(index)}>
                             { primaryColor === index && (
                                 <div className="check">
                                     <FontAwesomeIcon icon={faCheck} />
@@ -131,7 +157,7 @@ export default function Settings(){
                 <h2>Font Size</h2>
                 <div className="options-container">
                     { fontSizes.map( (size, index) => (
-                        <button className="btn">
+                        <button className="btn" onClick={() => changeFontSize(index)}>
                             {size.title}
                             {fontSize === index && (
                                 <span><FontAwesomeIcon icon={faCheck} /></span>
@@ -145,7 +171,7 @@ export default function Settings(){
                 <h2>Animation Speed</h2>
                 <div className="options-container">
                     { animationSpeeds.map( (speed, index) => (
-                        <button className="btn">
+                        <button className="btn" onClick={() => changeAnimationSpeed(index)}>
                             {speed.title}
                             {animationSpeed === index && (
                                 <span><FontAwesomeIcon icon={faCheck} /></span>

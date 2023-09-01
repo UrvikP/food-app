@@ -10,7 +10,7 @@
     padding: 1em;
     border-radius: 5px;
     border-left: .5em solid var(--primary-color);
-    background-color: var(--background-color);
+    background-color: var(--background-light);
     margin-top: 1em;
     display: flex;
     gap: 1.25em;
@@ -53,5 +53,5 @@
 
 .d-block h2{
     font-size: 1.75em;
-    //text-align: center;
+    color: var(--text-color);
 }
