@@ -32,7 +32,7 @@ export default function Navbar(){
     return (
         <>
             <div className="navbar container">
-                <a href="#!" className="logo">F<span>oo</span>dHub</a>
+                <Link to="/" className="logo">F<span>oo</span>dHub</Link>
                 <div className="nav-links">
                     {links.map(link => (
                         <Link to={link.path} className={location.pathname === link.path ? "active": ""} key={link.name}>{link.name}</Link>
